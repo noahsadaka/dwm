@@ -32,6 +32,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "mpv",      NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -65,6 +66,8 @@ static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%"
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static const char *mutemic[] = { "amixer", "set",   "Capture", "toggle",  NULL };
+static const char *bklightup[] = {"xbacklight", "-inc", "5", NULL};
+static const char *bklightdown[] = {"xbacklight", "-dec", "5", NULL};
 
 
 static Key keys[] = {
@@ -76,6 +79,8 @@ static Key keys[] = {
 	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol } },
 	{ 0,                       XF86XK_AudioMicMute, spawn, {.v = mutemic } },
+	{ 0,			   XF86XK_MonBrightnessDown, spawn, {.v = bklightdown } },
+	{ 0,			   XF86XK_MonBrightnessUp, spawn, {.v = bklightup } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
