@@ -64,6 +64,8 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *mutemic[] = { "amixer", "set",   "Capture", "toggle",  NULL };
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -72,7 +74,8 @@ static Key keys[] = {
 	{ 0,				XK_Print,  spawn,	   SHCMD("import ~/Pictures/screenshots/$( date +%Y-%m-%d_%T.png | sed -r 's/(:)/-/g' )") },
 	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
-	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol } },
+	{ 0,                       XF86XK_AudioMicMute, spawn, {.v = mutemic } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
