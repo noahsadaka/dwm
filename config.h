@@ -66,8 +66,9 @@ static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%"
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static const char *mutemic[] = { "amixer", "set",   "Capture", "toggle",  NULL };
-static const char *bklightup[] = {"xbacklight", "-inc", "5", NULL};
-static const char *bklightdown[] = {"xbacklight", "-dec", "5", NULL};
+static const char *bklightup[] = { "xbacklight", "-inc", "5", NULL };
+static const char *bklightdown[] = { "xbacklight", "-dec", "5", NULL };
+static const char *ff[] = {"firefox", NULL };
 
 
 
@@ -75,13 +76,15 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ 0,				XK_Print,  spawn,	   SHCMD("import ~/Pictures/screenshots/$( date +%Y-%m-%d_%T.png | sed -r 's/(:)/-/g' )") },
+	{ 0,				XK_Print,  spawn,	   SHCMD("~/.Scripts/screenshotter") },
 	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol } },
 	{ 0,                       XF86XK_AudioMicMute, spawn, {.v = mutemic } },
 	{ 0,			   XF86XK_MonBrightnessDown, spawn, {.v = bklightdown } },
 	{ 0,			   XF86XK_MonBrightnessUp, spawn, {.v = bklightup } },
+	{ MODKEY,			XK_w,	   spawn,	  {.v = ff } },
+	{ MODKEY,			XK_e,      spawn,          SHCMD("~/.Scripts/emojicopier") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
