@@ -81,6 +81,7 @@ static Key keys[] = {
 	{ 0,			   XF86XK_MonBrightnessUp, spawn, SHCMD("xbacklight -inc 5 ; pkill -RTMIN+11 dwmblocks") },
 	{ MODKEY,			XK_w,	   spawn,	  SHCMD("firefox") },
 	{ MODKEY,			XK_e,      spawn,          SHCMD("~/.Scripts/emojicopier") },
+	{ MODKEY,			XK_u,      spawn,          SHCMD("~/.Scripts/unicodecopier") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
