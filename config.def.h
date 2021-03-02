@@ -82,6 +82,8 @@ static Key keys[] = {
 	{ MODKEY,			XK_w,	   spawn,	  SHCMD("firefox") },
 	{ MODKEY,			XK_e,      spawn,          SHCMD("~/.Scripts/emojicopier") },
 	{ MODKEY,			XK_u,      spawn,          SHCMD("~/.Scripts/unicodecopier") },
+	{ MODKEY|ShiftMask,		XK_d,      spawn, 	   SHCMD("xrandr --output HDMI2 --right-of LVDS1 --auto")},
+	{ MODKEY|ShiftMask,		XK_s,      spawn, 	   SHCMD("xrandr --output HDMI2 --off")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
