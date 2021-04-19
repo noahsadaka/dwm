@@ -8,8 +8,8 @@ static const Gap default_gap        = {.isgap = 0, .realgap = 0, .gappx = 0};
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {  "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true", "FontAwesome:size=10"};
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = {  "monospace:pixelsize=14", "JoyPixels:pixelsize=14:antialias=true:autohint=true", "FontAwesome:pixelsize=14"};
+static const char dmenufont[]       = "monospace:pixelsize=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -83,7 +83,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_e,      spawn,          SHCMD("~/.Scripts/emojicopier") },
 	{ MODKEY,			XK_u,      spawn,          SHCMD("~/.Scripts/unicodecopier") },
 	{ MODKEY|ShiftMask,		XK_d,      spawn, 	   SHCMD("xrandr --output HDMI2 --right-of LVDS1 --auto")},
-	{ MODKEY|ShiftMask,		XK_s,      spawn, 	   SHCMD("xrandr --output HDMI2 --off")},
+	{ MODKEY|ShiftMask,		XK_s,      spawn, 	   SHCMD("xrandr --output HDMI2 --off && xrandr -s 1366x768")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
