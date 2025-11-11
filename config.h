@@ -9,13 +9,13 @@ static const unsigned int snap      = 10;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {  "monospace:pixelsize=14", "JoyPixels:pixelsize=14:antialias=true:autohint=true", "FontAwesome:pixelsize=14"};
-static const char dmenufont[]       = "monospace:pixelsize=14";
-static const char col_gray1[]       = "#222222";
+static const char *fonts[]          = {"DejaVuSans:pixelsize=14:style=Condensed Bold", "JoyPixels:pixelsize=14:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=14"};
+static const char dmenufont[]       = "DejaVuSans:pixelsize=14.5";
+static const char col_gray1[]       = "#454545"; /*background of dwmblocks*/
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#fc7303";
+static const char col_cyan[]        = "#0d2567"; /*change this one for background*/
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -35,6 +35,15 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "st",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,      NULL,     "Figure",       0,         1,          0,           1,        -1 },
+	{ "jetbrains-pycharm",      NULL,     NULL,       0,         1,          0,           0,        -1 },
+	{ NULL, NULL, "Confirm Exit",      0,          1,          0,          1,      -1 }, /* PyCharm */
+	{ NULL, NULL, "Customize PyCharm",    0,       1,          0,          1,      -1 }, /* PyCharm */
+	{ NULL, NULL, "Import PyCharm Settings",      0,          1,          0,          1,      -1 }, /* PyCharm */
+	{ NULL, NULL, "License Activation",           0,          1,          0,          1,      -1 }, /* PyCharm */
+	{ NULL, NULL, "PyCharm User Agreement",       0,          1,          0,          1,      -1 }, /* PyCharm */
+	{ NULL, NULL, "Tip of the Day",               0,          1,          0,          1,      -1 }, /* PyCharm */
+	{ NULL, NULL, "Welcome to PyCharm",           0,          1,          0,          1,      -1 }, /* PyCharm */
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
